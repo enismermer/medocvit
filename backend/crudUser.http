@@ -1,0 +1,24 @@
+# 1. Créer une route permettant de créer un utilisateur
+### Créer un user
+POST http://localhost:1992/api/auth/local/register
+Content-Type: application/json
+
+{
+    "data": {
+        "pseudo": "lea.schmidt@gmail.com",
+        "password": "lea1234"
+    }
+}
+
+
+# Créer une route permettant de se connecter avec un utilisateur en renvoyant un token JWT
+### Créer un user
+POST http://localhost:1992/api/auth/local
+Content-Type: application/json
+
+{
+    "data": {
+        "pseudo": "lea.schmidt@gmail.com",
+        "password": "lea1234"
+    }
+}
