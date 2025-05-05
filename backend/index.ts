@@ -45,7 +45,7 @@ apiRouter.use("/auth", routerAuth);
 // Route principale => /api
 app.use("/api", apiRouter);
 
-app.use((err, req, res, next) => {
+app.use((err: any, req: any, res: any, next: any) => {
     console.error(err.stack);
     res.status(500).json({ error: "Une erreur interne est survenue." });
 });

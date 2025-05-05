@@ -1,10 +1,18 @@
 import "dotenv/config";
-import jwt from "jsonwebtoken";
-import { Request, Response, NextFunction } from 'express';
+import jwt, { JwtPayload } from "jsonwebtoken";
+import { Request, Response, NextFunction } from "express";
+
+// Étendre l'interface Request pour inclure la propriété token
+declare module "express-serve-static-core" {
+    interface Request {
+        token?: string;
+        decodedToken?: JwtPayload | string;
+    }
+}
 
 export interface DecodeToken {
     id: number;
-    username: string;
+    name: string;
     email: string;
     iat: number;
     exp: number;
@@ -12,33 +20,23 @@ export interface DecodeToken {
 
 export async function checkToken(req: Request, res: Response, next: NextFunction) {
     const fullToken = req.headers.authorization;
-    if (!fullToken) {
-        res.status(401).send("No token provided");
-    }
-    else {
 
-        const [typeToken, token] = fullToken.split(" ");
-        if(typeToken !== "Bearer"){
-            res.status(401).send("Invalid token type");
-        }
-        else {
-            
-            try {
-                console.log('token', token)
-                const decoded = jwt.verify(token, process.env.JWT_SECRET!)
-                console.log('decoded', decoded);
-                if (decoded) {
-                    req.token = token;
-                    next();
-                }
-                else {
-                    res.status(401).send("Invalid token");
-                }
-            }
-            catch(e){
-                console.log('invalid token on verify', e)
-                res.status(401).send("Invalid token on verify");
-            }
-        }
+    if (!fullToken) {
+        return res.status(401).json({ message: "No token provided" });
+    }
+
+    const [typeToken, token] = fullToken.split(" ");
+    if (typeToken !== "Bearer" || !token) {
+        return res.status(401).json({ message: "Invalid token type or format" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET!);
+        req.token = token;
+        req.decodedToken = decoded; // Stocker le token décodé si nécessaire
+        next();
+    } catch (error) {
+        console.error("Token verification failed:", error);
+        return res.status(401).json({ message: "Invalid token" });
     }
 }
