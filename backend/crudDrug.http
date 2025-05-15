@@ -1,0 +1,43 @@
+### Get all drugs (même si la liste est vide)
+GET http://localhost:4000/api/drugs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+
+###
+
+### Create a drug
+POST http://localhost:4000/api/drugs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+
+{
+    "data": {
+        "name": "Doliprane",
+        "type": "Paracetamol",
+        "description": "lorem ipsum dolor sit amet",
+        "profile_id": 2
+    }
+}
+
+###
+
+### Get a single drug by ID
+GET http://localhost:4000/api/drugs/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+
+###
+
+### Update a drug
+PUT http://localhost:4000/api/drugs/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+
+{
+  "name": "Dafalgan",
+  "type": "Paracetamol"
+}
+
+###
+
+### Delete a drug
+DELETE http://localhost:4000/api/drugs/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8

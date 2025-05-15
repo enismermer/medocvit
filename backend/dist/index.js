@@ -40,7 +40,7 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ error: "Une erreur interne est survenue." });
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(process.env.PORT, () => {
     console.log(`Example app listening on port ${PORT}!`);
 });

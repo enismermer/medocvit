@@ -20,44 +20,46 @@ require("dotenv/config");
 const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
 exports.routerAuth = (0, express_1.Router)();
+// --- Register ---
 exports.routerAuth.post("/local/register", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // const pseudo = req.body.pseudo;
-    // const password = req.body.password;
-    console.log("Request body:", req.body); // Debugging
-    const { pseudo, password } = req.body.data;
-    // Vérifier si les données sont valides
-    if (!pseudo || !password) {
-        return res.status(400).json({ message: "Pseudo and password are required" });
+    const { email, password, first_name, last_name, gender, birth_date } = req.body.data;
+    if (!email || !password) {
+        return res.status(400).json({ message: "Email and password are required" });
     }
-    const userWithEmail = yield prisma.user.findUnique({ where: { pseudo } });
-    if (userWithEmail) {
-        res.status(400).json("Email already exists");
+    const existingUser = yield prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+        return res.status(400).json({ message: "Email already exists" });
     }
-    else {
-        const hashedPassword = yield bcrypt_1.default.hash(password, parseInt(process.env.SALT_ROUNDS));
-        const newUser = yield prisma.user.create({
-            data: {
-                pseudo,
-                password: hashedPassword
-            }
-        });
-        res.status(201).json(newUser);
-    }
+    const hashedPassword = yield bcrypt_1.default.hash(password, parseInt(process.env.SALT_ROUNDS));
+    const newUser = yield prisma.user.create({
+        data: {
+            email,
+            password: hashedPassword,
+            first_name,
+            last_name,
+            gender,
+            birthdate: new Date(birth_date)
+        }
+    });
+    res.status(201).json(newUser);
 }));
+// --- Login ---
 exports.routerAuth.post("/local", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { identifier, password } = req.body.data;
-    const userWithEmail = yield prisma.user.findFirst({ where: { pseudo: identifier } });
-    if (!userWithEmail) {
-        res.status(400).json("Email or Password is incorrect");
+    const { email, password } = req.body.data;
+    const user = yield prisma.user.findUnique({ where: { email } });
+    if (!user) {
+        return res.status(400).json("Email or Password is incorrect");
     }
-    else {
-        const isPasswordCorrect = yield bcrypt_1.default.compare(password, userWithEmail.password);
-        if (isPasswordCorrect) {
-            const token = jsonwebtoken_1.default.sign(userWithEmail, process.env.JWT_SECRET);
-            res.json(Object.assign({ token }, userWithEmail));
-        }
-        else {
-            res.status(400).json("Email or Password is incorrect");
-        }
+    const isPasswordCorrect = yield bcrypt_1.default.compare(password, user.password);
+    if (!isPasswordCorrect) {
+        return res.status(400).json("Email or Password is incorrect");
     }
+    const token = jsonwebtoken_1.default.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1d" });
+    res.json({
+        token,
+        user: {
+            id: user.id,
+            email: user.email,
+        }
+    });
 }));

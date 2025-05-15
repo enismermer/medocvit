@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  // output   = "../generated/prisma"
 }
 
 datasource db {
@@ -16,9 +16,75 @@ datasource db {
 
 
 model User {
-  id        Int           @id @default(autoincrement())
-  name      String
-  email     String         @unique
-  password  String
+  id         Int         @id @default(autoincrement())
+  first_name String      @db.VarChar(255)
+  last_name  String      @db.VarChar(255)
+  email      String      @unique @db.VarChar(255)
+  password   String      @db.VarChar(255)
+  gender     String?     @db.VarChar(255)
+  birthdate DateTime?
 
+  profile       Profile?
+  subscription  Subscription?
+}
+
+model Profile {
+  id               Int      @id @default(autoincrement())
+  first_name       String   @db.VarChar(255)
+  last_name        String   @db.VarChar(255)
+  birthdate       DateTime
+  medical_situation String?
+
+  user     User    @relation(fields: [user_id], references: [id])
+  user_id  Int     @unique
+
+  drugs            Drug[]
+  takingMedication TakingMedication[]
+  sideEffects      SideEffect[]
+}
+
+model Subscription {
+  id         Int      @id @default(autoincrement())
+  type       String   @db.VarChar(100)
+  start_date DateTime
+
+  user     User   @relation(fields: [user_id], references: [id])
+  user_id  Int    @unique
+}
+
+model Drug {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  type        String   @db.VarChar(100)
+  description String?
+
+  profile     Profile  @relation(fields: [profile_id], references: [id])
+  profile_id  Int
+
+  takingMedication TakingMedication[]
+  sideEffects      SideEffect[]
+}
+
+model TakingMedication {
+  id            Int      @id @default(autoincrement())
+  take_hour     DateTime
+  remainder_type String   @db.VarChar(100)
+
+  profile   Profile  @relation(fields: [profile_id], references: [id])
+  profile_id Int
+
+  drug      Drug     @relation(fields: [drug_id], references: [id])
+  drug_id   Int
+}
+
+model SideEffect {
+  id             Int      @id @default(autoincrement())
+  description    String
+  reporting_date DateTime
+
+  profile   Profile  @relation(fields: [profile_id], references: [id])
+  profile_id Int
+
+  drug      Drug     @relation(fields: [drug_id], references: [id])
+  drug_id   Int
 }

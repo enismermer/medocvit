@@ -32,11 +32,11 @@ apiRouter.use("/drugs", checkToken, routerDrug);
 
 // Route pour la ressource sideEffects
 // Avec un checkToken afin de vérifier le token de l'utilisateur connecté
-apiRouter.use("/side-effects", checkToken, routerSideEffect);
+apiRouter.use("/sideEffects", checkToken, routerSideEffect);
 
 // Route pour la ressource takingMedications
 // Avec un checkToken afin de vérifier le token de l'utilisateur connecté
-apiRouter.use("/taking-medication", checkToken, routerTakingMedication);
+apiRouter.use("/takingMedications", checkToken, routerTakingMedication);
 
 // Crée une route pour l'authentification
 apiRouter.use("/auth", routerAuth);
