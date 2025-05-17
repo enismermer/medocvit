@@ -1,5 +1,5 @@
 ### Create a new takingMedication
-POST http://localhost:4000/api/takingMedications
+POST https://medocvit.onrender.com/api/takingMedications
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
@@ -13,15 +13,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 }
 
 ### Get all takingMedications
-GET http://localhost:4000/api/takingMedications
+GET https://medocvit.onrender.com/api/takingMedications
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
 ### Get one takingMedication
-GET http://localhost:4000/api/takingMedications/3
+GET https://medocvit.onrender.com/api/takingMedications/3
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
 ### Update a takingMedication
-PUT http://localhost:4000/api/takingMedications/3
+PUT https://medocvit.onrender.com/api/takingMedications/3
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
@@ -31,5 +31,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 }
 
 ### Delete a takingMedication
-DELETE http://localhost:4000/api/takingMedications/3
+DELETE https://medocvit.onrender.com/api/takingMedications/3
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8

@@ -1,5 +1,5 @@
 ### Create a new subscription
-POST http://localhost:4000/api/subscriptions
+POST https://medocvit.onrender.com/api/subscriptions
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
@@ -12,15 +12,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 }
 
 ### Get all subscriptions
-GET http://localhost:4000/api/subscriptions
+GET https://medocvit.onrender.com/api/subscriptions
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
 ### Get one subscription
-GET http://localhost:4000/api/subscriptions/1
+GET https://medocvit.onrender.com/api/subscriptions/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
 ### Update a subscription
-PUT http://localhost:4000/api/subscriptions/1
+PUT https://medocvit.onrender.com/api/subscriptions/1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
@@ -29,5 +29,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 }
 
 ### Delete a subscription
-DELETE http://localhost:4000/api/subscriptions/1
+DELETE https://medocvit.onrender.com/api/subscriptions/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8

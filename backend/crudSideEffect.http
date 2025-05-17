@@ -1,5 +1,5 @@
 ### Create a new side effect
-POST http://localhost:4000/api/sideEffects
+POST https://medocvit.onrender.com/api/sideEffects
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
@@ -13,15 +13,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 }
 
 ### Get all side effects
-GET http://localhost:4000/api/sideEffects
+GET https://medocvit.onrender.com/api/sideEffects
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
 ### Get one side effect
-GET http://localhost:4000/api/sideEffects/1
+GET https://medocvit.onrender.com/api/sideEffects/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
 ### Update a side effect
-PUT http://localhost:4000/api/sideEffects/1
+PUT https://medocvit.onrender.com/api/sideEffects/1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
 
@@ -31,5 +31,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 }
 
 ### Delete a side effect
-DELETE http://localhost:4000/api/sideEffects/1
+DELETE https://medocvit.onrender.com/api/sideEffects/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8

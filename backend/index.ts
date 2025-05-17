@@ -2,6 +2,7 @@ import cors from "cors";
 import "dotenv/config";
 import express from "express";
 import { routerAuth } from "./src/api/auth";
+import { routerUser } from "./src/api/users/route";
 import { checkToken } from "./src/middlewares/checkToken";
 import routerSubscription from "./src/api/subscriptions/route";
 import routerProfile from "./src/api/profiles/route";
@@ -40,6 +41,8 @@ apiRouter.use("/takingMedications", checkToken, routerTakingMedication);
 
 // Crée une route pour l'authentification
 apiRouter.use("/auth", routerAuth);
+
+apiRouter.use("/users", checkToken, routerUser);
 
 
 // Route principale => /api
