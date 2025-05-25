@@ -24,7 +24,7 @@ model User {
   gender     String?     @db.VarChar(255)
   birthdate DateTime?
 
-  profile       Profile?
+  profile       Profile[]
   subscription  Subscription?
 }
 
@@ -35,8 +35,8 @@ model Profile {
   birthdate       DateTime
   medical_situation String?
 
+  user_id  Int     
   user     User    @relation(fields: [user_id], references: [id])
-  user_id  Int     @unique
 
   drugs            Drug[]
   takingMedication TakingMedication[]

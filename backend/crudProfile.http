@@ -1,25 +1,25 @@
 ### Create a new profile
-POST http://localhost:4000/api/profiles
+POST https://medocvit.onrender.com/api/profiles
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJ0b3RvQGdtYWlsLmNvbSIsImlhdCI6MTc0ODE3OTUyMSwiZXhwIjoxNzQ4MjY1OTIxfQ.o9fNNumkJTdyS2h2Mx1vEB1LKma_sa4n_NtN6AtaWWE
 
 {
     "data": {
         "first_name": "John",
-        "last_name": "Doe",
-        "birthdate": "1990-01-01T00:00:00Z",
+        "last_name": "Wick",
+        "birthdate": "1990-06-01T00:00:00Z",
         "medical_situation": "Healthy",
-        "user_id": 2
+        "user_id": 8
     }
 }
 
 ### Get all profiles
 GET https://medocvit.onrender.com/api/profiles
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJ0b3RvQGdtYWlsLmNvbSIsImlhdCI6MTc0ODE3OTUyMSwiZXhwIjoxNzQ4MjY1OTIxfQ.o9fNNumkJTdyS2h2Mx1vEB1LKma_sa4n_NtN6AtaWWE
 
 ### Get one profile by ID
-GET https://medocvit.onrender.com/api/profiles/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Njk3NjM2OSwiZXhwIjoxNzQ3MDYyNzY5fQ.dWM_PpNIS4ujiS-nn8UsMqL0cYGOZcLKfz1OZmY1wF8
+GET https://medocvit.onrender.com/api/profiles/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJ0b3RvQGdtYWlsLmNvbSIsImlhdCI6MTc0ODE3OTUyMSwiZXhwIjoxNzQ4MjY1OTIxfQ.o9fNNumkJTdyS2h2Mx1vEB1LKma_sa4n_NtN6AtaWWE
 
 ### Update a profile
 PUT https://medocvit.onrender.com/api/profiles/1
